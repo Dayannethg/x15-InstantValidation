@@ -1,25 +1,25 @@
-function validate(){
-  //this validate comes from onclick"validate" on the html that affects the New Game button
-  //Grab the user's input and store in variables
-  var userEntered = document.getElementById("user").value;
-  if (userEntered.length < 6 || userEntered.includes(" "))
+
+function validateUsername(){
+    var userEntered = document.getElementById("user").value;
+if (userEntered.length < 6 || userEntered.includes(" "))
   //For length it will be "blank".length the blank is the variable defined you want to have that length//
   {
     document.getElementById("usernameError").innerHTML="Username must be at least 6 characters.";
     document.getElementById("usernameError").classList.remove("hidden-message");
     document.getElementById("usernameError").classList.add("shown-message");
-    //Turn the username items red
     document.getElementById("usernameGroup").classList.add("has-error");
-
-  // & then if that variable does meet that length, then it will have success//
-  }
+  // & then if that variable does meet that length, then it will have success
+}
   else
   {
   document.getElementById("user").classList.add("has-success");
   //else statement is if whatever is said before else is not met then this will happen//
   }
-  var passEntered = document.getElementById("pass").value;
+}
 
+function validatePassword(){
+  var passEntered = document.getElementById("pass").value;
+  var userEntered = document.getElementById("user").value;
   //variable is passEntered which is what is imputed into the password box//
   if(passEntered.length < 6 || passEntered.length > 20 )
   //if the variable "passEntered" is equal to === the actual word "password" then this will happen//
@@ -30,7 +30,6 @@ function validate(){
     document.getElementById("passwordError").classList.add("shown-message");
     //Turn the password items red
     document.getElementById("passwordGroup").classList.add("has-error");
-
 }
 else if( (passEntered.toLowerCase() == "password" ) || passEntered == userEntered)
 {
@@ -39,14 +38,17 @@ else if( (passEntered.toLowerCase() == "password" ) || passEntered == userEntere
   document.getElementById("passwordError").classList.add("shown-message");
   //Turn the password items red
   document.getElementById("passwordGroup").classList.add("has-error");
-
-
 }
-
 else
   //this else statement is if the password entered isnt "password" then there success//
 {
     document.getElementById("pass").classList.add("has-success");
 }
+}
+function register(){
+  var userEntered = document.getElementById("user").value;
+  var passEntered = document.getElementById("pass").value;
+  window.alert( "Username:" + " " + userEntered   + "Password:" + " " +passEntered );
+}
 
-} //this bracket closes the bracket opened at function validate//
+ //this bracket closes the bracket opened at function validate/
